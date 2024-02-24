@@ -1,0 +1,22 @@
+/* start box */
+.d-flex {
+    display: flex;
+    flex: 1;
+
+}
+
+.c_orange {
+    background-color: #f59e0b;
+}
+
+.c_blue {
+    background-color: #0075ff;
+}
+
+.c_green {
+    background-color: #22c55e;
+}
+.o_none{
+    opacity: 0;
+}
+/* start box */

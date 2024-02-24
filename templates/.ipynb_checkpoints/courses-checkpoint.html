@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- تضمين العناصر الأساسية هنا -->
+</head>
+<body>
+    <div class="page d-flex">
+        <!-- تضمين العناصر الجانبية هنا -->
+        <div class="content">
+            <!-- تضمين العناصر الأخرى هنا -->
+            <div class="courses">
+                <div class="course">
+                    <form id="uploadForm" enctype="multipart/form-data">
+                        <label for="file-upload" class="custom-file-upload">
+                            <i class="fa fa-cloud-upload"></i> اختر صورة
+                        </label>
+                        <input id="file-upload" type="file" name="file"/>
+                        <button type="submit" class="upload-button">تحليل الصورة</button>
+                        <button type="button" class="upload-button" onclick="submitImage()">تحليل الصورة</button>
+
+                    </form>
+                    <div id="imagePreview"></div>
+                    <div id="predictionResult"></div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitImage() {
+            var formData = new FormData();
+            formData.append('file', document.querySelector('input[type=file]').files[0]);
+    
+            // تأكد من أن العنوان صحيح ويشير إلى حيث يعمل خادم FastAPI الخاص بك
+            fetch('http://127.0.0.1:8000/predict/', {
+                method: 'POST',
+                body: formData,
+                mode: 'cors',  // إضافة هذا السطر
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('predictionResult').textContent = 'نتيجة التنبؤ: ' + data.predicted_class;
+            })
+            .catch(error => console.error('Error:', error));
+            
+        }
+    </script>
+    
+    
+        
+</body>
+</html>
