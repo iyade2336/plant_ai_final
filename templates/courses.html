@@ -46,6 +46,36 @@
                     <div id="imagePreview"></div>
                     <div id="predictionResult"></div>
                 </div>
+                <div class="container">
+                <div class="card" style="--color: #0f2bff">
+                    <button class="button">
+                        <span class="text"><a href="payment">Pay Now</a></span>
+                        <div class="icon">
+                            <svg>
+                                <use xlink:href="#arrow-right"></use>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+                <div class="card" style="--color: #00bb00">
+                    <button  class="button">
+                        <span class="text"><a  href="project.html">Disease info</a></span>
+                        <div class="icon">
+                            <svg>
+                                <use xlink:href="#arrow-right"></use>
+                            </svg>
+                        </div>
+                    </button>
+                    <svg style="display: none">
+                        <symbol id="arrow-right" viewBox="0 0 20 10">
+                            <path d="M14.84 0l-1.08 1.06 3.3 3.2H0v1.49h17.05l-3.3 3.2L14.84 10 20 5l-5.16-5z"></path>
+                        </symbol>
+                        <filter id="noiseFilter">
+                            <feTurbulence type="fractalNoise" baseFrequency="1.8" numOctaves="6" stitchTiles="stitch"></feTurbulence>
+                        </filter>
+                    </svg>
+                </div>
+                
             </div>
         </div>
     </div>
